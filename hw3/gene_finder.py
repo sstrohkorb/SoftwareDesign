@@ -315,13 +315,43 @@ def find_all_ORFs_both_strands(dna):
         dna: a DNA sequence
         returns: a list of non-nested ORFs
     """
-     
-    # YOUR IMPLEMENTATION HERE
+    reversed_dna = get_reverse_complement(dna)
+    print reversed_dna
 
 def find_all_ORFs_both_strands_unit_tests():
     """ Unit tests for the find_all_ORFs_both_strands function """
 
-    # YOUR IMPLEMENTATION HERE
+    # DNA input strands 
+    # reverse of 1 is 
+    dna_input1 = "ATGCATGAATGTAGATAGATGTGCCC"
+    dna_input2 = "GCATGCCCGGGTATCCGGAAATAG"
+    dna_input3 = "GATGTTTATGGGCTAGTAG"
+
+    # Expected output list of ORFs
+    e_output1 = ['ATGCATGAATGTAGA', 'ATGTGCCC', 'ATGAATGTAGATAGATGTGCCC', 'ATG']
+    e_output2 = ['ATGCCCGGGTATCCGGAAATAG']
+    e_output3 = ['ATGTTTATGGGC']
+
+    # Actual output list of ORFs
+    a_output1 = find_all_ORFs_both_strands(dna_input1)
+    a_output2 = find_all_ORFs_both_strands(dna_input2)
+    a_output3 = find_all_ORFs_both_strands(dna_input3)
+
+    test1_result = two_lists_contain_same_elements(e_output1, a_output1)
+    test2_result = two_lists_contain_same_elements(e_output2, a_output2)
+    test3_result = two_lists_contain_same_elements(e_output3, a_output3)
+
+    if not test1_result:
+        print "Test 1 FAILED: " + str(a_output1) + " != " + str(e_output1)
+    if not test2_result:
+        print "Test 2 FAILED: " + str(a_output2) + " != " + str(e_output2)
+    if not test3_result:
+        print "Test 3 FAILED: " + str(a_output3) + " != " + str(e_output3)
+
+    if test1_result and test2_result and test3_result:
+        return True
+    else:
+        return False
 
 def longest_ORF(dna):
     """ Finds the longest ORF on both strands of the specified DNA and returns it
