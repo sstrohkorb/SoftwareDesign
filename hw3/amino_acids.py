@@ -23,3 +23,9 @@ codons = [['TTT', 'TTC'],                                   # F
           ['TGG'],                                          # W 
           ['CGT', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG'],       # R
           ['GGT', 'GGC', 'GGA', 'GGG']]                     # G
+
+
+    # ['ATG CAT GAA TGT AGA', 'ATG TGC CC', 'ATG AAT GTA GAT AGA TGT GCC C']
+    # ['MHECR', 'MC', 'MNVDRCA']
+    # ['ATG CAT GGG TTA TAT CAT GAA ATA G', 'ATG GGT TAT ATC ATG AAA', 'ATG ATA', 'ATG CAT GC']
+    # ['MHGLYHEI', 'MGYIMK', 'MI', 'MH']
